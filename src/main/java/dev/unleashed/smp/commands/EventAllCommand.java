@@ -1,6 +1,7 @@
 package dev.unleashed.smp.commands;
 
 import dev.unleashed.smp.events.EventManager;
+import dev.unleashed.smp.events.GameEvent;
 import dev.unleashed.smp.localization.LocalizationManager;
 import dev.unleashed.smp.managers.PermissionManager;
 import dev.unleashed.smp.utils.MessageUtils;

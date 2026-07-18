@@ -10,9 +10,11 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 
 public final class LuckyDropEvent extends AbstractEvent implements Listener {
+    private EventContext ctx;
     public LuckyDropEvent() { super("lucky_drop"); }
     @Override public @NotNull String getDescription() { return "Increased chance of rare drops."; }
     @Override public void onStart(@NotNull EventContext ctx, @NotNull Set<Player> players) {
+        this.ctx = ctx;
         Bukkit.getPluginManager().registerEvents(this, ctx.plugin());
     }
     @EventHandler

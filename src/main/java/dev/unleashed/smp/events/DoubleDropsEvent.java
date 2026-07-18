@@ -11,9 +11,11 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 
 public final class DoubleDropsEvent extends AbstractEvent implements Listener {
+    private EventContext ctx;
     public DoubleDropsEvent() { super("double_drops"); }
     @Override public @NotNull String getDescription() { return "Double block/item drops."; }
     @Override public void onStart(@NotNull EventContext ctx, @NotNull Set<Player> players) {
+        this.ctx = ctx;
         Bukkit.getPluginManager().registerEvents(this, ctx.plugin());
     }
     @EventHandler

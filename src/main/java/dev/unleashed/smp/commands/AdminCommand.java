@@ -82,7 +82,6 @@ public final class AdminCommand implements org.bukkit.command.CommandExecutor, o
                 catch (NumberFormatException ex) { MessageUtils.send(sender, MessageUtils.parse(localizationManager.get("not-number", "%input%", args[2]))); return true; }
                 curseManager.setLuck(target.getUniqueId(), level);
                 MessageUtils.send(sender, MessageUtils.parse("<green>Set luck of " + target.getName() + " to " + level + "</green>"));
-                }
             }
             case "list" -> {
                 MessageUtils.send(sender, MessageUtils.parse(localizationManager.get("event-list-header")));
