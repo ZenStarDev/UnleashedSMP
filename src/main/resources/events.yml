@@ -1,0 +1,281 @@
+# ============================================================================
+# UnleashedSMP - Event Definitions
+# ============================================================================
+# Each event listed here can be toggled, weighted, and configured independently.
+# The event ENGINE reads these values; individual event implementations read
+# their own parameters from events.yml.
+# ============================================================================
+
+# Global event defaults applied to every event unless overridden.
+defaults:
+  enabled: true
+  cooldown: 600
+  weight: 10
+  duration: 600
+  probability: 1.0
+  broadcast: true
+  sound: true
+  particles: true
+  permission: ""
+
+events:
+  tnt_rain:
+    enabled: true
+    weight: 8
+    duration: 400
+    description: "Rain of TNT from the sky."
+    countdown: 6000
+    settings:
+      tnt-per-tick: 2
+      world-spawn-radius: 30
+
+  meteor_shower:
+    enabled: true
+    weight: 6
+    duration: 500
+    description: "Falling meteors that explode on impact."
+    countdown: 6000
+    settings:
+      meteors-per-tick: 1
+      explosion-power: 3
+
+  mob_rain:
+    enabled: true
+    weight: 9
+    duration: 400
+    description: "Hostile mobs rain from the sky."
+    settings:
+      mobs-per-tick: 3
+      mob-types: [ZOMBIE, SKELETON, SPIDER]
+
+  cat_rain:
+    enabled: true
+    weight: 4
+    duration: 300
+    description: "Cats rain from the sky."
+    settings:
+      cats-per-tick: 2
+
+  chicken_rain:
+    enabled: true
+    weight: 5
+    duration: 300
+    description: "Chickens rain from the sky."
+    settings:
+      chickens-per-tick: 4
+
+  creeper_party:
+    enabled: true
+    weight: 5
+    duration: 350
+    description: "Charged creepers spawn around players."
+    settings:
+      creepers-per-wave: 3
+      wave-interval: 60
+
+  lucky_drop:
+    enabled: true
+    weight: 10
+    duration: 300
+    description: "Increased chance of rare drops."
+    settings:
+      multiplier: 3.0
+
+  diamond_rain:
+    enabled: true
+    weight: 4
+    duration: 250
+    description: "Diamonds rain from the sky."
+    settings:
+      diamonds-per-tick: 3
+
+  xp_storm:
+    enabled: true
+    weight: 8
+    duration: 400
+    description: "Players gain XP rapidly."
+    settings:
+      xp-per-tick: 5
+
+  random_teleport:
+    enabled: true
+    weight: 6
+    duration: 0
+    description: "Players are randomly teleported."
+    settings:
+      teleport-radius: 100
+      interval: 100
+
+  gravity:
+    enabled: true
+    weight: 5
+    duration: 400
+    description: "Inverted or heavy gravity effect."
+    settings:
+      mode: INVERT
+
+  speed:
+    enabled: true
+    weight: 7
+    duration: 400
+    description: "Players gain speed."
+    settings:
+      amplifier: 2
+
+  freeze:
+    enabled: true
+    weight: 5
+    duration: 300
+    description: "Players are slowed/frozen."
+    settings:
+      amplifier: 4
+
+  blindness:
+    enabled: true
+    weight: 5
+    duration: 300
+    description: "Players are blinded."
+    settings:
+      amplifier: 1
+
+  night:
+    enabled: true
+    weight: 6
+    duration: 1200
+    description: "Forces night time."
+    settings:
+      set-time: 13000
+
+  blood_moon:
+    enabled: true
+    weight: 4
+    duration: 1200
+    description: "Red moon with stronger mobs."
+    settings:
+      mob-multiplier: 2.0
+
+  boss_spawn:
+    enabled: true
+    weight: 3
+    duration: 0
+    description: "Spawns a powerful boss."
+    settings:
+      boss-type: WITHER
+      health: 500
+
+  zombie_horde:
+    enabled: true
+    weight: 6
+    duration: 500
+    description: "Swarms of zombies."
+    settings:
+      zombies-per-wave: 8
+      wave-interval: 80
+
+  skeleton_army:
+    enabled: true
+    weight: 6
+    duration: 500
+    description: "Swarms of skeletons."
+    settings:
+      skeletons-per-wave: 8
+      wave-interval: 80
+
+  random_potion:
+    enabled: true
+    weight: 8
+    duration: 300
+    description: "Random potion effects applied."
+    settings:
+      effects: [SPEED, JUMP, STRENGTH, WEAKNESS, POISON]
+
+  explosion_zone:
+    enabled: true
+    weight: 5
+    duration: 400
+    description: "Random explosions around players."
+    settings:
+      interval: 50
+      power: 2
+
+  mob_buff:
+    enabled: true
+    weight: 6
+    duration: 500
+    description: "All mobs gain buffs."
+    settings:
+      strength: 2
+      speed: 1
+
+  player_buff:
+    enabled: true
+    weight: 7
+    duration: 400
+    description: "All players gain buffs."
+    settings:
+      effects: [REGENERATION, RESISTANCE, STRENGTH]
+
+  healing_rain:
+    enabled: true
+    weight: 7
+    duration: 400
+    description: "Players regenerate health."
+    settings:
+      heal-per-tick: 1
+
+  double_drops:
+    enabled: true
+    weight: 8
+    duration: 500
+    description: "Double block/item drops."
+    settings:
+      multiplier: 2
+
+  tree_explosion:
+    enabled: true
+    weight: 4
+    duration: 300
+    description: "Trees explode into wood."
+    settings:
+      radius: 5
+
+  earthquake:
+    enabled: true
+    weight: 5
+    duration: 400
+    description: "Ground shakes, players knocked."
+    settings:
+      interval: 40
+      power: 1.5
+
+  lightning_storm:
+    enabled: true
+    weight: 5
+    duration: 400
+    description: "Lightning strikes randomly."
+    settings:
+      interval: 30
+
+  treasure_hunt:
+    enabled: true
+    weight: 6
+    duration: 600
+    description: "Hidden treasures spawn."
+    settings:
+      treasure-count: 10
+
+  drop_party:
+    enabled: true
+    weight: 5
+    duration: 400
+    description: "Items drop from the sky."
+    settings:
+      items-per-tick: 4
+
+  pvp_frenzy:
+    enabled: true
+    weight: 5
+    duration: 600
+    description: "PvP enabled everywhere with buffs."
+    settings:
+      strength: 1

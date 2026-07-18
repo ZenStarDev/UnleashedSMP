@@ -1,0 +1,18 @@
+# ============================================================================
+# UnleashedSMP - Scheduler
+# ============================================================================
+
+# Interval (ticks) for the event auto-roll scheduler. 1200 = ~60s.
+event-roll-interval: 1200
+
+# Interval (ticks) for cache cleanup.
+cache-cleanup-interval: 6000
+
+# Interval (ticks) for metrics flush.
+metrics-interval: 12000
+
+# Interval (ticks) for GUI animation ticks.
+gui-animation-interval: 10
+
+# Whether to use the Folia/async scheduler where available.
+use-async-scheduler: true

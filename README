@@ -1,0 +1,785 @@
+# ROLE
+You are a senior Java Software Engineer, Minecraft Paper API expert, and Plugin Architect.
+You are designing a production-quality Minecraft Paper plugin.
+
+DO NOT generate toy examples.
+DO NOT generate placeholder implementations.
+Everything must be production-ready.
+
+====================================================
+PROJECT
+====================================================
+
+Plugin Name:
+UnleashedSMP
+
+Language:
+Java 21
+
+Build System:
+Maven
+
+Target:
+Paper 1.21.x
+
+License:
+MIT
+
+IDE:
+IntelliJ IDEA
+
+Architecture:
+Clean Architecture
+Modular
+SOLID
+OOP
+Dependency Injection Friendly
+Open for Extension
+Closed for Modification
+
+====================================================
+GOALS
+====================================================
+
+Create one of the most complete Paper plugins for SMP servers.
+
+The plugin must be:
+
+• Extremely optimized
+• Thread-safe
+• Expandable
+• Well documented
+• Easy to maintain
+• Compatible with popular Paper plugins
+• Safe for production servers
+• Minimal TPS impact
+
+====================================================
+PLUGIN COMPATIBILITY
+====================================================
+
+The plugin MUST automatically integrate (when available) with:
+
+Economy
+---------
+Vault
+PlayerPoints
+
+Permissions
+------------
+LuckPerms
+
+Placeholder
+-----------
+PlaceholderAPI
+
+Regions
+--------
+WorldGuard
+WorldEdit
+
+Protection
+----------
+GriefPrevention
+Lands
+Residence
+
+NPC
+---
+Citizens
+
+Items
+-----
+ItemsAdder
+Oraxen
+MMOItems
+
+Combat
+------
+MythicMobs
+EliteMobs
+ModelEngine
+
+Pets
+----
+MyPet
+
+Skills
+------
+MMOCore
+AureliumSkills
+
+Database
+---------
+SQLite
+MySQL
+MariaDB
+
+Chat
+----
+EssentialsXChat
+VentureChat
+
+Discord
+---------
+DiscordSRV
+
+Logging
+-------
+CoreProtect
+
+Anti Cheat
+----------
+GrimAC
+Vulcan
+Matrix
+
+Do NOT require these plugins.
+
+SoftDepend only.
+
+Automatically detect integrations.
+
+====================================================
+MAVEN
+====================================================
+
+Use Maven.
+
+Generate
+
+pom.xml
+
+with
+
+Java 21
+
+Paper API
+
+Adventure API
+
+Vault API
+
+PlaceholderAPI API
+
+LuckPerms API
+
+WorldGuard API
+
+WorldEdit API
+
+Citizens API
+
+MythicMobs API
+
+PlayerPoints API
+
+HikariCP
+
+SQLite
+
+MySQL
+
+MariaDB
+
+SnakeYAML
+
+Adventure MiniMessage
+
+JUnit
+
+Mockito
+
+Checkstyle
+
+SpotBugs
+
+Shade Plugin
+
+Compiler Plugin
+
+Surefire
+
+Jar Plugin
+
+====================================================
+PLUGIN STRUCTURE
+====================================================
+
+Create a professional project structure.
+
+Example
+
+plugin
+commands
+listeners
+events
+services
+managers
+database
+scheduler
+gui
+config
+integrations
+permissions
+placeholders
+storage
+api
+models
+utils
+exceptions
+serialization
+hooks
+migration
+logging
+metrics
+
+====================================================
+CONFIGURATION
+====================================================
+
+Generate fully commented configs.
+
+config.yml
+
+messages.yml
+
+permissions.yml
+
+events.yml
+
+lucky.yml
+
+mutants.yml
+
+gui.yml
+
+database.yml
+
+performance.yml
+
+integration.yml
+
+debug.yml
+
+scheduler.yml
+
+Each config must contain every configurable value.
+
+No hardcoded values.
+
+Hot reload support.
+
+====================================================
+CORE SYSTEM
+====================================================
+
+Implement
+
+Plugin Bootstrap
+
+Lifecycle Manager
+
+Dependency Loader
+
+Configuration Manager
+
+Reload Manager
+
+Command Manager
+
+Listener Manager
+
+GUI Manager
+
+Database Manager
+
+Cache Manager
+
+Scheduler Manager
+
+Metrics Manager
+
+Integration Manager
+
+Localization Manager
+
+Permission Manager
+
+Event Registry
+
+Custom Event API
+
+====================================================
+COMMAND SYSTEM
+====================================================
+
+Use Brigadier style.
+
+Support:
+
+/unleashed
+
+/event
+
+/eventall
+
+/lucky
+
+/reload
+
+/debug
+
+/help
+
+/admin
+
+Complete tab completion.
+
+Adventure Components.
+
+Permission checks.
+
+Cooldown support.
+
+Async execution.
+
+====================================================
+GUI
+====================================================
+
+Modern Inventory GUI.
+
+Pagination.
+
+Animated items.
+
+Confirmation menus.
+
+Search.
+
+Sorting.
+
+Categories.
+
+Permission filtering.
+
+====================================================
+EVENT SYSTEM
+====================================================
+
+Create a modular event engine.
+
+Each event must be isolated.
+
+Enable
+
+Disable
+
+Cooldown
+
+Weight
+
+Duration
+
+Probability
+
+Permission
+
+Requirements
+
+Custom Messages
+
+Broadcast
+
+Sound
+
+Particles
+
+Rewards
+
+Rollback
+
+Scheduling
+
+Stack prevention
+
+Priority
+
+Event Queue
+
+Support creating custom events through API.
+
+====================================================
+DEFAULT EVENTS
+====================================================
+
+Implement scalable support for 50+ events.
+
+Examples:
+
+TNT Rain
+
+Meteor Shower
+
+Mob Rain
+
+Cat Rain
+
+Chicken Rain
+
+Creeper Party
+
+Lucky Drop
+
+Diamond Rain
+
+XP Storm
+
+Random Teleport
+
+Gravity
+
+Speed
+
+Freeze
+
+Blindness
+
+Night
+
+Blood Moon
+
+Boss Spawn
+
+Zombie Horde
+
+Skeleton Army
+
+Random Potion
+
+Explosion Zone
+
+Mob Buff
+
+Player Buff
+
+Healing Rain
+
+Double Drops
+
+Tree Explosion
+
+Earthquake
+
+Lightning Storm
+
+Treasure Hunt
+
+Drop Party
+
+PvP Frenzy
+
+and many more.
+
+====================================================
+LUCKY SYSTEM
+====================================================
+
+Implement
+
+/lucky
+
+Good effects
+
+Bad effects
+
+Neutral effects
+
+Weighted chances
+
+Cooldown
+
+Permission
+
+Configurable rewards
+
+Configurable punishments
+
+Custom sounds
+
+Particles
+
+Animations
+
+====================================================
+MUTANT MOBS
+====================================================
+
+Random chance
+
+Configurable spawn chance
+
+Custom names
+
+Glow
+
+BossBar
+
+Special abilities
+
+Custom loot
+
+Scaling HP
+
+Scaling Damage
+
+Scaling Armor
+
+Scaling Speed
+
+Scaling Rewards
+
+Integration with MythicMobs if installed.
+
+====================================================
+EVENT API
+====================================================
+
+Provide API for developers.
+
+Register Event
+
+Unregister Event
+
+Start Event
+
+Stop Event
+
+Pause Event
+
+Resume Event
+
+Event Hooks
+
+Custom Event Classes
+
+Event Builder
+
+Event Scheduler
+
+====================================================
+DATABASE
+====================================================
+
+Support
+
+SQLite
+
+MySQL
+
+MariaDB
+
+HikariCP
+
+Migration System
+
+DAO Pattern
+
+Async Queries
+
+Caching
+
+====================================================
+PERFORMANCE
+====================================================
+
+Never block main thread.
+
+Use async where safe.
+
+Avoid memory leaks.
+
+Avoid scheduler abuse.
+
+Reuse objects.
+
+Cache expensive operations.
+
+Profile-friendly.
+
+====================================================
+SECURITY
+====================================================
+
+Permission validation.
+
+Input validation.
+
+Null safety.
+
+Exception handling.
+
+Graceful fallback.
+
+No console spam.
+
+====================================================
+LOGGING
+====================================================
+
+Structured logging.
+
+Debug mode.
+
+Performance logs.
+
+Integration logs.
+
+Database logs.
+
+====================================================
+LOCALIZATION
+====================================================
+
+Support
+
+en_US
+
+th_TH
+
+Runtime language switching.
+
+MiniMessage.
+
+PlaceholderAPI support.
+
+====================================================
+PERMISSIONS
+====================================================
+
+Generate a complete permission tree.
+
+Admin
+
+Moderator
+
+Helper
+
+Player
+
+Bypass
+
+GUI
+
+Commands
+
+Lucky
+
+Events
+
+Debug
+
+Reload
+
+API
+
+====================================================
+PLACEHOLDERAPI
+====================================================
+
+Create placeholders such as
+
+%unleashed_event%
+
+%unleashed_lucky%
+
+%unleashed_mutant%
+
+%unleashed_players%
+
+====================================================
+TESTING
+====================================================
+
+Include
+
+JUnit
+
+Mockito
+
+Unit Tests
+
+Integration Tests
+
+====================================================
+CODE STYLE
+====================================================
+
+Follow
+
+Google Java Style
+
+SOLID
+
+DRY
+
+KISS
+
+Meaningful naming
+
+JavaDocs
+
+No duplicated code.
+
+====================================================
+DELIVERABLES
+====================================================
+
+Generate:
+
+✔ Complete Maven project
+
+✔ Complete folder structure
+
+✔ All source code
+
+✔ plugin.yml
+
+✔ pom.xml
+
+✔ Every configuration file
+
+✔ Every listener
+
+✔ Every command
+
+✔ Event Engine
+
+✔ Lucky System
+
+✔ Mutant Mob System
+
+✔ Integration Hooks
+
+✔ Database Layer
+
+✔ GUI
+
+✔ Localization
+
+✔ API
+
+✔ Tests
+
+✔ Documentation
+
+✔ README.md
+
+✔ CHANGELOG.md
+
+✔ CONTRIBUTING.md
+
+✔ LICENSE
+
+The final result should look like a mature open-source Paper plugin suitable for publishing on GitHub, Modrinth, Hangar, SpigotMC, and CurseForge, with clean architecture, extensive configuration, and maximum compatibility with the Paper plugin ecosystem.

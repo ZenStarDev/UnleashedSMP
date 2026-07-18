@@ -1,0 +1,57 @@
+# ============================================================================
+# UnleashedSMP - Integration
+# ============================================================================
+# "auto" = detect at runtime. "true" = force enable. "false" = force disable.
+# ============================================================================
+
+economy:
+  vault: auto
+  playerpoints: auto
+
+permissions:
+  luckperms: auto
+
+placeholders:
+  placeholderapi: auto
+
+regions:
+  worldguard: auto
+  worldedit: auto
+  griefprevention: auto
+  lands: auto
+  residence: auto
+
+npc:
+  citizens: auto
+
+items:
+  itemsadder: auto
+  oraxen: auto
+  mmoitems: auto
+
+combat:
+  mythicmobs: auto
+  elitemobs: auto
+  modelengine: auto
+
+pets:
+  mypet: auto
+
+skills:
+  mmocore: auto
+  aureliumskills: auto
+
+chat:
+  essentialsx: auto
+  venturechat: auto
+
+discord:
+  discordsrv: auto
+
+logging:
+  coreprotect: auto
+
+anticheat:
+  grimac: auto
+  vulcan: auto
+  matrix: auto

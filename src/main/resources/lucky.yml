@@ -1,0 +1,83 @@
+# ============================================================================
+# UnleashedSMP - Lucky System
+# ============================================================================
+# Define good / bad / neutral lucky outcomes with weighted chances.
+# type: GOOD | BAD | NEUTRAL
+# effect: a MiniMessage description shown to the player
+# command: optional console command executed (supports %player%)
+# reward: optional item/eco reward (item: <material>; amount: <n>)
+# ============================================================================
+
+cooldown: 600
+
+outcomes:
+  good_diamond:
+    type: GOOD
+    weight: 10
+    effect: "<green>You found diamonds!</green>"
+    reward:
+      item: DIAMOND
+      amount: 5
+    sound: ENTITY_PLAYER_LEVELUP
+
+  good_money:
+    type: GOOD
+    weight: 8
+    effect: "<green>You gained 500 coins!</green>"
+    economy: 500
+    sound: ENTITY_EXPERIENCE_ORB_PICKUP
+
+  good_heal:
+    type: GOOD
+    weight: 12
+    effect: "<green>You were fully healed!</green>"
+    command: "effect give %player% minecraft:regeneration 10 2"
+
+  good_luck:
+    type: GOOD
+    weight: 6
+    effect: "<green>Luck be with you!</green>"
+    command: "effect give %player% minecraft:luck 300 1"
+
+  bad_lightning:
+    type: BAD
+    weight: 7
+    effect: "<red>A lightning strike hits you!</red>"
+    command: "execute as %player% at %player% run summon lightning_bolt ~ ~ ~"
+
+  bad_poison:
+    type: BAD
+    weight: 9
+    effect: "<red>You were poisoned!</red>"
+    command: "effect give %player% minecraft:poison 10 1"
+
+  bad_lose_money:
+    type: BAD
+    weight: 5
+    effect: "<red>You lost 200 coins!</red>"
+    economy: -200
+
+  bad_slow:
+    type: BAD
+    weight: 8
+    effect: "<red>You feel sluggish!</red>"
+    command: "effect give %player% minecraft:slowness 15 1"
+
+  neutral_nothing:
+    type: NEUTRAL
+    weight: 14
+    effect: "<gray>Nothing happened.</gray>"
+
+  neutral_teleport:
+    type: NEUTRAL
+    weight: 6
+    effect: "<gray>You feel a strange shift...</gray>"
+    command: "execute as %player% at %player% run spreadplayers ~ ~ 10 50 false %player%"
+
+  neutral_food:
+    type: NEUTRAL
+    weight: 8
+    effect: "<gray>You received some food.</gray>"
+    reward:
+      item: BREAD
+      amount: 3

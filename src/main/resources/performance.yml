@@ -1,0 +1,19 @@
+# ============================================================================
+# UnleashedSMP - Performance
+# ============================================================================
+
+# Cache TTL in ticks for expensive lookups (e.g. integration caches).
+cache-ttl: 1200
+
+# Profile event execution times and warn when they exceed threshold (ms).
+profile-events: false
+profile-warn-threshold-ms: 50
+
+# Warn when a task blocks the main thread unexpectedly.
+warn-on-blocking: true
+
+# Target maximum TPS impact. Used by the scheduler to throttle spawning.
+max-spawns-per-tick: 20
+
+# Async queue bounds.
+event-queue-size: 256

@@ -1,0 +1,85 @@
+# ============================================================================
+# UnleashedSMP - Mutant Mobs
+# ============================================================================
+# Configure mutant mob types, their scaling and special abilities.
+# ============================================================================
+
+enabled: true
+spawn-chance: 0.02
+glow: true
+bossbar-color: RED
+
+mutants:
+  mutant_zombie:
+    enabled: true
+    base-mob: ZOMBIE
+    name: "<dark_red>Mutant Zombie</dark_red>"
+    weight: 10
+    hp-multiplier: 5.0
+    damage-multiplier: 3.0
+    armor: 10
+    speed-multiplier: 1.4
+    abilities:
+      - THROW
+      - REGENERATE
+    loot:
+      - item: ROTTEN_FLESH
+        amount: 10
+        chance: 1.0
+      - item: DIAMOND
+        amount: 1
+        chance: 0.3
+
+  mutant_skeleton:
+    enabled: true
+    base-mob: SKELETON
+    name: "<gray>Mutant Skeleton</gray>"
+    weight: 9
+    hp-multiplier: 4.0
+    damage-multiplier: 3.5
+    armor: 14
+    speed-multiplier: 1.5
+    abilities:
+      - MULTISHOT
+    loot:
+      - item: BONE
+        amount: 12
+        chance: 1.0
+      - item: BOW
+        amount: 1
+        chance: 0.5
+
+  mutant_creeper:
+    enabled: true
+    base-mob: CREEPER
+    name: "<green>Mutant Creeper</green>"
+    weight: 8
+    hp-multiplier: 3.0
+    damage-multiplier: 4.0
+    armor: 4
+    speed-multiplier: 1.2
+    abilities:
+      - MEGA_EXPLOSION
+    loot:
+      - item: GUNPOWDER
+        amount: 8
+        chance: 1.0
+
+  mutant_spider:
+    enabled: true
+    base-mob: SPIDER
+    name: "<dark_purple>Mutant Spider</dark_purple>"
+    weight: 7
+    hp-multiplier: 3.5
+    damage-multiplier: 2.5
+    armor: 6
+    speed-multiplier: 2.0
+    abilities:
+      - POISON_BITE
+    loot:
+      - item: STRING
+        amount: 10
+        chance: 1.0
+      - item: SPIDER_EYE
+        amount: 2
+        chance: 0.6

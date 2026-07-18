@@ -1,0 +1,75 @@
+# ============================================================================
+# UnleashedSMP - Permission Tree
+# ============================================================================
+# This file documents the full permission tree exposed by UnleashedSMP.
+# Permissions are also registered in plugin.yml; this file is documentation +
+# a source for dynamic permission suggestions.
+# ============================================================================
+
+permissions:
+  unleashed.*:
+    description: "Grants access to all UnleashedSMP features."
+    default: op
+    children:
+      - unleashed.command.*
+      - unleashed.bypass.*
+      - unleashed.gui.*
+      - unleashed.lucky.*
+      - unleashed.events.*
+      - unleashed.api
+
+  unleashed.command.*:
+    description: "All command permissions."
+    default: op
+    children:
+      - unleashed.command.unleashed
+      - unleashed.command.event
+      - unleashed.command.eventall
+      - unleashed.command.lucky
+      - unleashed.command.reload
+      - unleashed.command.debug
+      - unleashed.command.help
+      - unleashed.command.admin
+
+  unleashed.command.unleashed: "Main command access."
+  unleashed.command.event: "Start specific events."
+  unleashed.command.eventall: "Start global events."
+  unleashed.command.lucky: "Use the /lucky command."
+  unleashed.command.reload: "Reload configuration."
+  unleashed.command.debug: "Toggle debug mode."
+  unleashed.command.help: "View help."
+  unleashed.command.admin: "Admin controls."
+
+  unleashed.bypass.*:
+    description: "Bypass restrictions."
+    default: op
+    children:
+      - unleashed.bypass.cooldown
+      - unleashed.bypass.mutant
+
+  unleashed.bypass.cooldown: "Bypass command cooldowns."
+  unleashed.bypass.mutant: "Bypass mutant spawn chance."
+
+  unleashed.gui.*:
+    description: "GUI access."
+    default: true
+    children:
+      - unleashed.gui.events
+      - unleashed.gui.lucky
+      - unleashed.gui.admin
+
+  unleashed.gui.events: "Open the event GUI."
+  unleashed.gui.lucky: "Open the lucky GUI."
+  unleashed.gui.admin: "Open the admin GUI."
+
+  unleashed.lucky.*:
+    description: "Lucky system access."
+    default: true
+
+  unleashed.events.*:
+    description: "Event system access."
+    default: true
+
+  unleashed.api:
+    description: "Allows usage of the developer API."
+    default: false

@@ -1,0 +1,15 @@
+# ============================================================================
+# UnleashedSMP - Debug
+# ============================================================================
+
+# Master debug switch. Toggle live with /debug.
+enabled: false
+
+# Verbose integration logging.
+log-integrations: false
+
+# Verbose database logging.
+log-database: false
+
+# Verbose event engine logging.
+log-events: false

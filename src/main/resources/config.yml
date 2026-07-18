@@ -1,0 +1,142 @@
+# ============================================================================
+# UnleashedSMP - Main Configuration
+# ============================================================================
+# This file contains the primary settings for UnleashedSMP.
+# Every value here is hot-reloadable unless stated otherwise.
+# Reload with: /unleashed reload  or  /reload unleashed
+# ============================================================================
+
+# General plugin settings
+general:
+  # The default language file to load (lang key in localization files).
+  # Supported: en_US, th_TH
+  default-language: "en_US"
+  # Whether the plugin should broadcast a startup message to operators.
+  startup-broadcast: true
+  # Prefix used in broadcasts and messages (parsed with MiniMessage).
+  broadcast-prefix: "<gradient:#ff6a00:#ffd700>[UnleashedSMP]</gradient> "
+  # If true, metrics data is collected (anonymous).
+  metrics-enabled: true
+
+# Event engine configuration
+events:
+  # Master toggle for the random event scheduler.
+  enabled: true
+  # Interval (in ticks) between automatic random event rolls. 1200 = ~60s at 20tps.
+  auto-roll-interval: 1200
+  # Probability (0.0 - 1.0) that an auto roll actually triggers an event.
+  auto-roll-chance: 0.35
+  # Maximum number of simultaneous running events.
+  max-concurrent-events: 3
+  # Prevents the same event from immediately re-triggering.
+  stack-prevention: true
+  # Cooldown (ticks) after any event ends before another can start globally.
+  global-cooldown: 200
+  # Whether events running are announced in the world.
+  announce: true
+  # Countdown configuration before events start.
+  countdown:
+    # Master toggle for event countdown.
+    enabled: true
+    # Default countdown duration in ticks (6000 = 5 minutes).
+    default-ticks: 6000
+    # Permission to bypass countdown.
+    bypass-permission: "unleashed.bypass.countdown"
+    # Broadcast interval in ticks during countdown (100 = every 5 seconds).
+    broadcast-interval: 100
+  # Curse / luck system configuration.
+  curse:
+    # Bonus chance added to auto-roll when cursed players are online.
+    luck-bonus-chance: 0.15
+
+# Lucky system configuration
+lucky:
+  enabled: true
+  # Cooldown (ticks) per player between /lucky uses. 600 = 30s.
+  cooldown: 600
+  # Base chance weights are defined in lucky.yml
+
+# Mutant mob configuration
+mutants:
+  enabled: true
+  # Global chance (0.0 - 1.0) a naturally spawned mob becomes a mutant.
+  spawn-chance: 0.02
+  # Boss bar color theme.
+  bossbar-color: "RED"
+  # Whether mutants glow.
+  glow: true
+
+# GUI configuration
+gui:
+  # Main menu title (MiniMessage).
+  main-title: "<gold>UnleashedSMP</gold>"
+  # Rows (multiples of 9 between 9 and 54).
+  main-rows: 54
+  # Whether GUI animations are enabled.
+  animations: true
+  # Animation tick speed.
+  animation-speed: 10
+
+# Performance configuration
+performance:
+  # Hard cap on async pool usage warnings.
+  warn-on-blocking: true
+  # Cache TTL (ticks) for expensive lookups.
+  cache-ttl: 1200
+  # Whether to profile event execution times.
+  profile-events: false
+
+# Integration toggles (auto-detected but can be forced on/off)
+integration:
+  economy:
+    vault: "auto"
+    playerpoints: "auto"
+  permissions:
+    luckperms: "auto"
+  placeholders:
+    placeholderapi: "auto"
+  regions:
+    worldguard: "auto"
+    worldedit: "auto"
+    griefprevention: "auto"
+    lands: "auto"
+    residence: "auto"
+  npc:
+    citizens: "auto"
+  items:
+    itemsadder: "auto"
+    oraxen: "auto"
+    mmoitems: "auto"
+  combat:
+    mythicmobs: "auto"
+    elitemobs: "auto"
+    modelengine: "auto"
+  pets:
+    mypet: "auto"
+  skills:
+    mmocore: "auto"
+    aureliumskills: "auto"
+  chat:
+    essentialsx: "auto"
+    venturechat: "auto"
+  discord:
+    discordsrv: "auto"
+  logging:
+    coreprotect: "auto"
+  anticheat:
+    grimac: "auto"
+    vulcan: "auto"
+    matrix: "auto"
+
+# Debug configuration
+debug:
+  # Master debug switch. Toggle live with /debug.
+  enabled: false
+  # Verbose integration logging.
+  log-integrations: false
+  # Verbose database logging.
+  log-database: false
+
+# Database configuration (overridden by database.yml)
+database:
+  type: "sqlite"

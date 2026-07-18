@@ -1,0 +1,61 @@
+# ============================================================================
+# UnleashedSMP - Messages
+# ============================================================================
+# All messages support MiniMessage formatting and PlaceholderAPI placeholders.
+# Available placeholders: %player%, %event%, %luck%, %mutant%
+# ============================================================================
+
+prefix: "<gradient:#ff6a00:#ffd700>[UnleashedSMP]</gradient> "
+
+no-permission: "%prefix% <red>You do not have permission to do that.</red>"
+reload-success: "%prefix% <green>Configuration reloaded successfully.</green>"
+reload-failed: "%prefix% <red>Reload failed: %reason%</red>"
+invalid-usage: "%prefix% <yellow>Usage: %usage%</yellow>"
+player-only: "%prefix% <red>This command can only be used by players.</red>"
+unknown-command: "%prefix% <red>Unknown subcommand. Use /unleashed help</red>"
+not-number: "%prefix% <red>%input% is not a valid number.</red>"
+
+event:
+  started: "%prefix% <gold>Event <aqua>%event%</aqua> has started!</gold>"
+  stopped: "%prefix% <gray>Event <aqua>%event%</aqua> has ended.</gray>"
+  countdown-start: "%prefix% <yellow>Event <aqua>%event%</aqua> will start in <gold>%time%</gold>!</yellow>"
+  countdown-broadcast: "%prefix% <yellow>Event <aqua>%event%</aqua> starts in <gold>%time%</gold>...</yellow>"
+  countdown-cancelled: "%prefix% <gray>Countdown for <aqua>%event%</aqua> was cancelled.</gray>"
+  not-found: "%prefix% <red>Event '%event%' was not found.</red>"
+  already-running: "%prefix% <yellow>Event '%event%' is already running.</yellow>"
+  disabled: "%prefix% <red>Event '%event%' is disabled.</red>"
+  cooldown: "%prefix% <yellow>Event '%event%' is on cooldown (%time%s).</yellow>"
+  no-active: "%prefix% <gray>There are no active events.</gray>"
+  list-header: "%prefix% <gold>Active Events:</gold>"
+  list-entry: " <gray>-</gray> <aqua>%event%</aqua> <gray>(%remaining%s left)</gray>"
+  reward: "%prefix% <green>You received a reward!</green>"
+
+lucky:
+  cooldown: "%prefix% <yellow>You must wait %time%s before using /lucky again.</yellow>"
+  good: "%prefix% <green>Lucky! %effect%</green>"
+  bad: "%prefix% <red>Unlucky! %effect%</red>"
+  neutral: "%prefix% <gray>%effect%</gray>"
+  none: "%prefix% <gray>Nothing happened...</gray>"
+
+mutant:
+  spawned: "%prefix% <dark_red>A <aqua>%mutant%</aqua> has appeared!</dark_red>"
+  killed: "%prefix% <green>You defeated the <aqua>%mutant%</aqua>!</green>"
+
+gui:
+  main-title: "<gold>UnleashedSMP</gold>"
+  events-title: "<gold>Event Menu</gold>"
+  lucky-title: "<gold>Lucky Menu</gold>"
+  close: "<red>Close</red>"
+  next-page: "<aqua>Next Page</aqua>"
+  previous-page: "<aqua>Previous Page</aqua>"
+  confirm: "<green>Confirm</green>"
+  cancel: "<red>Cancel</red>"
+
+debug:
+  enabled: "%prefix% <green>Debug mode enabled.</green>"
+  disabled: "%prefix% <red>Debug mode disabled.</red>"
+
+help:
+  header: "%prefix% <gold>UnleashedSMP Commands</gold>"
+  line: " <gray>/</gray><aqua>%command%</aqua> <gray>-</gray> %description%"
+  footer: "%prefix% <gray>Visit the wiki for more information.</gray>"
