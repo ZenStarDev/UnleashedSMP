@@ -143,7 +143,9 @@ public final class MutantManager implements Listener {
             entity.getAttribute(Attribute.ARMOR).setBaseValue(def.getArmor());
         }
         activeMutants.put(entity.getUniqueId(), def);
-        final BossBar bar = Bukkit.createBossBar(def.getName(),
+        final net.kyori.adventure.text.Component parsed = net.kyori.adventure.text.minimessage.MiniMessage.miniMessage().deserialize(def.getName());
+        final String legacyName = net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer.legacySection().serialize(parsed);
+        final BossBar bar = Bukkit.createBossBar(legacyName,
                 BarColor.valueOf(configManager.mutants().getString("bossbar-color", "RED")), BarStyle.SOLID);
         for (Player p : Bukkit.getOnlinePlayers()) {
             bar.addPlayer(p);
