@@ -15,6 +15,7 @@ public final class PlayerData {
     private int luckyUses;
     private long lastLucky;
     private int mutantsKilled;
+    private int luckLevel;
     private long createdAt;
 
     public PlayerData(@NotNull UUID uuid, @NotNull String username) {
@@ -34,4 +35,6 @@ public final class PlayerData {
     public void setMutantsKilled(int mutantsKilled) { this.mutantsKilled = mutantsKilled; }
     public long getCreatedAt() { return createdAt; }
     public void setCreatedAt(long createdAt) { this.createdAt = createdAt; }
+    public int getLuckLevel() { return luckLevel; }
+    public void setLuckLevel(int luckLevel) { this.luckLevel = luckLevel; }
 }

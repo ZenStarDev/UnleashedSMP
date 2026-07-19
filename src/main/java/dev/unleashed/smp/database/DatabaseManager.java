@@ -111,7 +111,7 @@ public final class DatabaseManager {
                 final String prefix = configManager.database().getString("table-prefix", "unleashed_");
                 stmt.execute("CREATE TABLE IF NOT EXISTS " + prefix + "player_data ("
                         + "uuid VARCHAR(36) PRIMARY KEY, username VARCHAR(64), lucky_uses INT DEFAULT 0, "
-                        + "last_lucky BIGINT DEFAULT 0, mutants_killed INT DEFAULT 0, created_at BIGINT)");
+                        + "last_lucky BIGINT DEFAULT 0, mutants_killed INT DEFAULT 0, luck_level INT DEFAULT 0, created_at BIGINT)");
                 stmt.execute("CREATE TABLE IF NOT EXISTS " + prefix + "event_log ("
                         + "id INTEGER PRIMARY KEY AUTOINCREMENT, event VARCHAR(64), started_at BIGINT, "
                         + "ended_at BIGINT, world VARCHAR(64))".replace("AUTOINCREMENT", type == DatabaseType.SQLITE ? "AUTOINCREMENT" : "AUTO_INCREMENT"));

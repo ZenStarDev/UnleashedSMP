@@ -28,7 +28,7 @@ public final class PlayerDataDao {
         return db.query(conn -> {
             try {
             try (PreparedStatement ps = conn.prepareStatement(
-                    "SELECT username, lucky_uses, last_lucky, mutants_killed, created_at FROM " + table + " WHERE uuid = ?")) {
+                    "SELECT username, lucky_uses, last_lucky, mutants_killed, luck_level, created_at FROM " + table + " WHERE uuid = ?")) {
                 ps.setString(1, uuid.toString());
                 try (ResultSet rs = ps.executeQuery()) {
                     if (rs.next()) {
@@ -36,6 +36,7 @@ public final class PlayerDataDao {
                         data.setLuckyUses(rs.getInt("lucky_uses"));
                         data.setLastLucky(rs.getLong("last_lucky"));
                         data.setMutantsKilled(rs.getInt("mutants_killed"));
+                        data.setLuckLevel(rs.getInt("luck_level"));
                         data.setCreatedAt(rs.getLong("created_at"));
                         if (!rs.getString("username").equals(username)) {
                             data.setUsername(username);
@@ -57,18 +58,20 @@ public final class PlayerDataDao {
         return db.query(conn -> {
             try {
             try (PreparedStatement ps = conn.prepareStatement(
-                    "INSERT INTO " + table + " (uuid, username, lucky_uses, last_lucky, mutants_killed, created_at) "
-                            + "VALUES (?,?,?,?,?,?) ON DUPLICATE KEY UPDATE username=?, lucky_uses=?, last_lucky=?, mutants_killed=?")) {
+                    "INSERT INTO " + table + " (uuid, username, lucky_uses, last_lucky, mutants_killed, luck_level, created_at) "
+                            + "VALUES (?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE username=?, lucky_uses=?, last_lucky=?, mutants_killed=?, luck_level=?")) {
                 ps.setString(1, data.getUuid().toString());
                 ps.setString(2, data.getUsername());
                 ps.setInt(3, data.getLuckyUses());
                 ps.setLong(4, data.getLastLucky());
                 ps.setInt(5, data.getMutantsKilled());
-                ps.setLong(6, data.getCreatedAt());
-                ps.setString(7, data.getUsername());
-                ps.setInt(8, data.getLuckyUses());
-                ps.setLong(9, data.getLastLucky());
-                ps.setInt(10, data.getMutantsKilled());
+                ps.setInt(6, data.getLuckLevel());
+                ps.setLong(7, data.getCreatedAt());
+                ps.setString(8, data.getUsername());
+                ps.setInt(9, data.getLuckyUses());
+                ps.setLong(10, data.getLastLucky());
+                ps.setInt(11, data.getMutantsKilled());
+                ps.setInt(12, data.getLuckLevel());
                 ps.executeUpdate();
             }
             return null;

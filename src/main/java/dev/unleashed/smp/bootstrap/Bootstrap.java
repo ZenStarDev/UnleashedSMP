@@ -77,7 +77,7 @@ public final class Bootstrap {
 
         permissionManager = new PermissionManager(plugin, integrationManager);
 
-        curseManager = new dev.unleashed.smp.curse.CurseManager(logger);
+        curseManager = new dev.unleashed.smp.curse.CurseManager(logger, databaseManager);
 
         eventManager = new EventManager(plugin, logger, configurationManager, localizationManager,
                 schedulerManager, databaseManager, integrationManager, cacheManager, curseManager);
