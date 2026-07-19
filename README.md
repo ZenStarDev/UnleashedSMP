@@ -21,29 +21,31 @@ configuration, and maximum compatibility with the Paper plugin ecosystem.
 ## Requirements
 
 - Java 21
-- Paper 1.21.x
+- Paper **1.20+** (1.20, 1.20.4, 1.21, 1.21.4 supported)
 - (Optional) any of the supported soft-depend plugins
 
-## Commands
-
-| Command | Permission | Description |
-|---------|------------|-------------|
-| `/unleashed` | `unleashed.command.unleashed` | Main command / GUI |
-| `/event <name>` | `unleashed.command.event` | Start an event |
-| `/eventall <name>` | `unleashed.command.eventall` | Start an event for everyone |
-| `/lucky` | `unleashed.command.lucky` | Roll the lucky system |
-| `/reload unleashed` | `unleashed.command.reload` | Reload configuration |
-| `/debug` | `unleashed.command.debug` | Toggle debug mode |
-| `/help` | `unleashed.command.help` | Show help |
-| `/admin` | `unleashed.command.admin` | Admin controls |
-
 ## Building
+
+Build for all versions (default profile = 1.21.4):
 
 ```bash
 mvn clean package
 ```
 
-The shaded jar is produced in `target/`.
+Build for a specific version:
+
+```bash
+mvn clean package -P 1-20-4
+mvn clean package -P 1-21
+```
+
+Available profiles:
+- `1-21-4` (default)
+- `1-21`
+- `1-20-4`
+- `1-20`
+
+The output jar will be named `UnleashedSMP-<version>-<api>.jar`, e.g. `UnleashedSMP-1.0.2-1.21.jar`.
 
 ## License
 
