@@ -2,7 +2,10 @@
 
 All notable changes to UnleashedSMP are documented here.
 
-## [1.0.0]
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [1.0.0] - 2026-07-19
 
 ### Added
 - Core bootstrap, lifecycle, and dependency loader.
@@ -17,3 +20,19 @@ All notable changes to UnleashedSMP are documented here.
 - PlaceholderAPI expansion.
 - Developer API.
 - JUnit/Mockito test scaffolding.
+- Curse/luck system: per-player luck levels affecting event targeting and auto-roll chance.
+- Event countdown: configurable pre-start countdown with broadcast warnings and admin controls.
+- Admin commands: `/admin cancelcountdown`, `/admin pending`, `/admin luck`.
+
+### Fixed
+- 19 event task leaks: repeating tasks now cancel properly on event stop.
+- GUI main menu and event list click handling were broken.
+- `DoubleDropsEvent` now respects configured multiplier.
+- `LuckyDropEvent` now respects configured multiplier.
+- `BossSpawnEvent` invalid entity type no longer crashes and leaks.
+- `PvpFrenzyEvent` now toggles PvP on/off.
+- `BloodMoonEvent` now applies mob multiplier and stops buff task on end.
+- Event reload now restarts auto-roll scheduler.
+- `EventManager.isEnabled` permission logic now works when no players are online.
+- Database DAO calls are now null-safe when DB is unavailable.
+- Command classes now parse MiniMessage before sending to players.
